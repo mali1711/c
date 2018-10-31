@@ -8,6 +8,11 @@ use think\Controller;
 
 class Good extends Controller
 {
+    public function getadd()
+    {
+       return $this->fetch('good/add');
+    }
+    
     /**
      * 商品添加
      * @return false|int
@@ -21,6 +26,14 @@ class Good extends Controller
         $goods->data($data);
         $res = $goods->save();
         return $res;
+    }
+
+    /**
+     * 商品列表
+     */
+    public function getshow()
+    {
+
     }
 
     /**

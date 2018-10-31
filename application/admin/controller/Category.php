@@ -7,12 +7,27 @@ use think\Controller;
 
 class Category extends Controller
 {
+    /**
+     * 添加分类
+     */
+    public function getadd()
+    {
+
+    }
+
     //
     public function postAdd()
     {
-        $_POST['categorys_addtime'] = date('Y-m-d H:i:s');
-        $categorys = new Categorys(input('post.'));
+        $data = input('post.');
+        $data['categorys_addtime'] = date('Y-m-d H:i:s');
+        $categorys = new Categorys();
+        $categorys->data($data);
         $res = $categorys->allowField(true)->save();
+        if($res){
+            $this->success('添加成功');
+        }else{
+            $this->error('添加失败');
+        }
     }
 
     /**

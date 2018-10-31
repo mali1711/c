@@ -12,14 +12,12 @@
             <div class="panel-heading">
                 <h3 class="panel-title">分类列表</h3>
             </div>
-
             <!--Data Table-->
             <!--===================================================-->
             <div class="panel-body">
                 <div class="pad-btm form-inline">
                     <div class="row">
                         <div class="col-sm-6 table-toolbar-left">
-                            <button id="demo-btn-addrow" class="btn btn-purple"><i class="demo-pli-add"></i> 添加分类</button>
 
                         </div>
                         <div class="col-sm-6 table-toolbar-right">
@@ -33,6 +31,43 @@
                     </div>
                 </div>
                 <div class="table-responsive">
+                    <form id="demo-bv-accordion" class="form-horizontal bv-form" action="/Acategory/add" method="post" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+                        <div id="demo-accordion" class="panel-group accordion">
+                            <div class="panel">
+
+                                <!-- Accordion title -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a data-parent="#demo-accordion" data-toggle="collapse" href="#demo-acc-panel-3" aria-expanded="false" class="collapsed"><span style="color: #dd1144">添加分类</span></a>
+                                    </h4>
+                                </div>
+
+                                <!-- Accordion content -->
+                                <div id="demo-acc-panel-3" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                                    <div class="panel-body">
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">分类名称</label>
+                                            <div class="col-lg-7">
+                                                <input type="text" class="form-control" name="categorys_title" placeholder="分类名称" data-bv-field="phoneNumber"><i style="display: none;" class="form-control-feedback" data-bv-icon-for="phoneNumber"></i>
+                                                <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="phoneNumber" data-bv-result="NOT_VALIDATED">The phone number is required and cannot be empty</small><small style="display: none;" class="help-block" data-bv-validator="digits" data-bv-for="phoneNumber" data-bv-result="NOT_VALIDATED">The value can contain only digits</small></div>
+                                        </div>
+                                        <div class="form-group has-feedback">
+                                            <label class="col-lg-3 control-label">分类描述</label>
+                                            <div class="col-lg-7">
+                                                <input type="text" class="form-control" name="categorys_desc" placeholder="简单描述" data-bv-field="city"><i style="display: none;" class="form-control-feedback" data-bv-icon-for="city"></i>
+                                                <small style="display: none;" class="help-block" data-bv-validator="notEmpty" data-bv-for="city" data-bv-result="NOT_VALIDATED">The city is required and cannot be empty</small></div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-7 col-lg-offset-3">
+                                                <button type="submit" class="btn btn-primary" name="signup" value="Sign up">确认添加</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
                     <table class="table table-striped">
                         <thead>
                         <tr>
@@ -44,16 +79,21 @@
                         </tr>
                         </thead>
                         <tbody>
+                        {volist name="list" id="data"}
                         <tr>
-                            <td><a class="btn-link" href="#"> Order #53431</a></td>
-                            <td>Steve N. Horton</td>
-                            <td><span class="text-muted"><i class="demo-pli-clock"></i> Oct 22, 2014</span></td>
-                            <td>$45.00</td>
+                            <td><a class="btn-link" href="#">{$data.categorys_title}</a></td>
+                            <td><a href="#"> 点击查看 </a></td>
+                            <td><span class="text-muted"><i class="demo-pli-clock"></i> {$data.categorys_addtime}</span></td>
+
                             <td>
-                                <div class="label label-table label-success">Paid</div>
+                                <div class="label label-table label-success">正常</div>
                             </td>
-                            <td>-</td>
+                            <td>
+                                <button class="btn btn-pink">修改</button>
+                                <div class="btn btn-dark"><a style="color:white" href="/Acategory/del?id={$data.categorys_id}">删除</a></div>
+                            </td>
                         </tr>
+                        {/volist}
                         </tbody>
                     </table>
                 </div>
