@@ -1,0 +1,153 @@
+{extend name="layout:index" /}
+{block name="content-container"}
+
+<div id="content-container">
+
+    <!--Page Title-->
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div id="page-title">
+        <h1 class="page-header text-overflow">添加配送员</h1>
+
+    </div>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <!--End page title-->
+
+
+
+
+
+
+    <!--Page content-->
+    <!--===================================================-->
+    <div id="page-content">
+
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel">
+
+                    <!-- BASIC FORM ELEMENTS -->
+                    <!--===================================================-->
+                    <form class="panel-body form-horizontal form-padding" action="add" method="post" enctype="multipart/form-data">
+                        <div class="panel-body">
+
+                            <!-- Bootstrap Select : Mint -->
+                            <!--===================================================-->
+                        </div>
+                        <!--Text Input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="demo-text-input">配送员名</label>
+                            <div class="col-md-9">
+                                <input type="text" name="shoppers_name" id="demo-text-input" class="form-control" placeholder="配送员的姓名">
+                            </div>
+                        </div>
+
+                        <!--Email Input-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="demo-email-input">密码</label>
+                            <div class="col-md-9">
+                                <input type="password" id="demo-email-input" name="shoppers_pass" class="form-control" placeholder="配送员的登录密码">
+                            </div>
+                        </div>
+
+                        <!--Password-->
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="demo-password-input">配送员手机号</label>
+                            <div class="col-md-9">
+                                <input type="iphone" name="shoppers_iphone" id="demo-password-input" class="form-control" placeholder="用于配送员登录">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="demo-password-input">配送员邮箱</label>
+                            <div class="col-md-9">
+                                <input type="text" name="shoppers_email" id="demo-password-input" class="form-control" placeholder="用于接受信息">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label" for="demo-textarea-input">身份证</label>
+                            <div class="col-md-9">
+                               <input type="text" name="shoppers_code" id="demo-textarea-input" class="form-control" placeholder="配送员身份证号(可以不填写)">
+                            </div>
+                        </div>
+
+                        <div class="form-group pad-ver">
+                            <label class="col-md-3 control-label">性别</label>
+                            <div class="col-md-9">
+                                <div class="radio">
+
+                                    <!-- Inline radio buttons -->
+                                    <input id="demo-inline-form-radiox" class="magic-radio" type="radio" value="1" name="shoppers_sex" checked>
+                                    <label for="demo-inline-form-radiox">男</label>
+
+                                    <input id="demo-inline-form-radio-3" class="magic-radio" type="radio" value="0" name="shoppers_sex">
+                                    <label for="demo-inline-form-radio-3">女</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group pad-ver">
+                            <label class="col-md-3 control-label">是否可以配送</label>
+                            <div class="col-md-9">
+                                <div class="radio">
+
+                                    <!-- Inline radio buttons -->
+                                    <input id="demo-inline-form-radio" class="magic-radio" type="radio" value="1" name="shoppers_status" checked>
+                                    <label for="demo-inline-form-radio">可以</label>
+
+                                    <input id="demo-inline-form-radio-2" class="magic-radio" type="radio" value="0" name="shoppers_status">
+                                    <label for="demo-inline-form-radio-2">不能配送</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--复选框-->
+                        <!--  <div class="form-group pad-ver">
+                              <label class="col-md-3 control-label">Inline Checkboxes</label>
+                              <div class="col-md-9">
+                                  <div class="checkbox">
+
+                                      &lt;!&ndash; Inline Checkboxes &ndash;&gt;
+                                      <input id="demo-form-inline-checkbox" class="magic-checkbox" type="checkbox" checked>
+                                      <label for="demo-form-inline-checkbox">Option 1 (pre-checked)</label>
+
+                                      <input id="demo-form-inline-checkbox-2" class="magic-checkbox" type="checkbox">
+                                      <label for="demo-form-inline-checkbox-2">Option 2</label>
+
+                                      <input id="demo-form-inline-checkbox-3" class="magic-checkbox" type="checkbox">
+                                      <label for="demo-form-inline-checkbox-3">Option 3</label>
+
+                                  </div>
+                              </div>
+                          </div>-->
+                        <!--复选框-->
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">配送员头像</label>
+                            <div class="col-md-9">
+					                        <span class="pull-left btn btn-primary btn-file">
+					                        Browse... <input type="file" name="shoppers_pic">
+					                        </span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-block btn-dark">确认添加配送员</button>
+                    </form>
+                    <!--===================================================-->
+                    <!-- END BASIC FORM ELEMENTS -->
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <!--===================================================-->
+    <!--End page content-->
+
+
+</div>
+{/block}

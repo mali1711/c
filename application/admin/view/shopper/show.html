@@ -1,0 +1,106 @@
+{extend name="layout:index" /}
+{block name="content-container"}
+
+<div id="content-container">
+
+    <!--Page content-->
+    <!--===================================================-->
+    <div id="page-content">
+
+
+        <div class="panel">
+            <div class="panel-heading">
+                <h3 class="panel-title">分类列表</h3>
+            </div>
+            <!--Data Table-->
+            <!--===================================================-->
+            <div class="panel-body">
+                <div class="pad-btm form-inline">
+                    <div class="row">
+                        <div class="col-sm-6 table-toolbar-left">
+
+                        </div>
+                        <div class="col-sm-6 table-toolbar-right">
+                            <div class="form-group">
+                                <input id="demo-input-search2" type="text" placeholder="搜索" class="form-control" autocomplete="off">
+                            </div>
+                            <div class="btn-group">
+                                <button class="btn btn-default"><i class="demo-pli-download-from-cloud"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <form id="demo-bv-accordion" class="form-horizontal bv-form" action="/acategory/add" method="post" novalidate="novalidate"><button type="submit" class="bv-hidden-submit" style="display: none; width: 0px; height: 0px;"></button>
+                        <div id="demo-accordion" class="panel-group accordion">
+                            <div class="panel">
+
+                                <!-- Accordion title -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title">
+                                        <a href="add" aria-expanded="false" class="collapsed"><span style="color: #dd1144">添加新配送员</span></a>
+                                    </h4>
+                                </div>
+
+                                <!-- Accordion content -->
+                            </div>
+                        </div>
+                    </form>
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center">配送员姓名</th>
+                            <th>配送员手机号</th>
+                            <th>配送员状态</th>
+                            <th>配送员邮箱</th>
+                            <th>配送员头像</th>
+                            <th>配送员性别</th>
+                            <th>配送员添加时间</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <!-- 表格垂直居中 -->
+                        <style>
+                            .table th, .table td {
+                                text-align: center;
+                                vertical-align: middle!important;
+                            }
+                        </style>
+                        <tbody>
+                        {volist name="list" id="data"}
+                        <tr>
+                            <td class="text-center inner"><a class="btn-link" href="#">{$data.shoppers_name}</a></td>
+                            <td><a href="#"> {$data.shoppers_iphone} </a></td>
+                            <td>
+                                <div class="label label-table label-success">正常</div>
+                            </td>
+                            <td><a href="#"> <img src="/uploads/shoppers/{$data.shoppers_pic}" height="70em"> </a></td>
+                            <td><a href="#"> {$data.shoppers_email} </a></td>
+
+                            <td><a href="#"> {$data.shoppers_sex} </a></td>
+                            <td><span class="text-muted"><i class="demo-pli-clock"></i> {$data.shoppers_addtime}</span></td>
+
+                            <td>
+                                <button class="btn btn-pink">修改</button>
+                                <div class="btn btn-dark"><a style="color:white" href="/Acategory/del?id={$data.shoppers_id}">删除</a></div>
+                            </td>
+                        </tr>
+                        {/volist}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!--===================================================-->
+            <!--End Data Table-->
+
+        </div>
+
+
+    </div>
+    <!--===================================================-->
+    <!--End page content-->
+
+
+</div>
+{/block}

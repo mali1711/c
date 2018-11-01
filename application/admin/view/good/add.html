@@ -28,131 +28,83 @@
 
                     <!-- BASIC FORM ELEMENTS -->
                     <!--===================================================-->
-                    <form class="panel-body form-horizontal form-padding">
+                    <form class="panel-body form-horizontal form-padding" action="add" method="post" enctype="multipart/form-data">
                         <div class="panel-body">
 
 
-
+                            <div class="form-group">
+                                <label class="col-md-3 control-label" for="demo-text-input">分类：</label>
+                                <div class="col-md-9">
+                                    <select name="categorys_id" class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-6" data-style="btn-mint">
+                                        {volist name="list" id="data"}
+                                        <option value="{$data.categorys_id}">{$data.categorys_title}</option>
+                                        {/volist}
+                                    </select>
+                                </div>
+                            </div>
                                 <!-- Bootstrap Select : Mint -->
                                 <!--===================================================-->
-                                <select class="selectpicker col-xs-6 col-sm-4 col-md-6 col-lg-6" data-style="btn-mint">
-                                    <option>Family</option>
-                                    <option>Friend</option>
-                                    <option>Partner</option>
-                                </select>
-
                         </div>
                         <!--Text Input-->
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="demo-text-input">Text Input</label>
+                            <label class="col-md-3 control-label" for="demo-text-input">商品标题</label>
                             <div class="col-md-9">
-                                <input type="text" id="demo-text-input" class="form-control" placeholder="Text">
-                                <small class="help-block">This is a help text</small>
+                                <input type="text" name="goods_title" id="demo-text-input" class="form-control" placeholder="显示再商品列表上">
                             </div>
                         </div>
 
                         <!--Email Input-->
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="demo-email-input">Email Input</label>
+                            <label class="col-md-3 control-label" for="demo-email-input">商品价格</label>
                             <div class="col-md-9">
-                                <input type="email" id="demo-email-input" class="form-control" placeholder="Enter your email">
-                                <small class="help-block">Please enter your email</small>
+                                <input type="number" id="demo-email-input" name="goods_price" class="form-control" placeholder="填写正确的金额">
                             </div>
                         </div>
 
                         <!--Password-->
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="demo-password-input">Password</label>
+                            <label class="col-md-3 control-label" for="demo-password-input">商品数量</label>
                             <div class="col-md-9">
-                                <input type="password" id="demo-password-input" class="form-control" placeholder="Password">
-                                <small class="help-block">Please enter password</small>
+                                <input type="number" name="goods_num" id="demo-password-input" class="form-control" placeholder="商品数量">
                             </div>
                         </div>
 
-                        <!--Readonly Input-->
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="demo-readonly-input">Readonly input</label>
+                            <label class="col-md-3 control-label" for="demo-password-input">商品属性</label>
                             <div class="col-md-9">
-                                <input type="text" id="demo-readonly-input" class="form-control" placeholder="Readonly input here..." readonly>
+                                <input type="text" name="goods_attribute" name="goods_attribute" id="demo-password-input" class="form-control" placeholder="商品属性">
                             </div>
                         </div>
 
-                        <!--Textarea-->
                         <div class="form-group">
-                            <label class="col-md-3 control-label" for="demo-textarea-input">Textarea</label>
+                            <label class="col-md-3 control-label" for="demo-textarea-input">商品简介</label>
                             <div class="col-md-9">
-                                <textarea id="demo-textarea-input" rows="9" class="form-control" placeholder="Your content here.."></textarea>
+                                <textarea id="demo-textarea-input" name="goods_desc" rows="9" class="form-control" placeholder="这里是简介，不显示再前台"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group pad-ver">
-                            <label class="col-md-3 control-label">Radio Buttons</label>
-                            <div class="col-md-9">
-
-                                <!-- Radio Buttons -->
-                                <div class="radio">
-                                    <input id="demo-form-radio" class="magic-radio" type="radio" name="form-radio-button" checked>
-                                    <label for="demo-form-radio">Option 1 (pre-checked)</label>
-                                </div>
-                                <div class="radio">
-                                    <input id="demo-form-radio-2" class="magic-radio" type="radio" name="form-radio-button">
-                                    <label for="demo-form-radio-2">Option 2</label>
-                                </div>
-                                <div class="radio">
-                                    <input id="demo-form-radio-3" class="magic-radio" type="radio" name="form-radio-button">
-                                    <label for="demo-form-radio-3">Option 2</label>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="form-group pad-ver">
-                            <label class="col-md-3 control-label">Inline Radio buttons</label>
+                            <label class="col-md-3 control-label">是否上架</label>
                             <div class="col-md-9">
                                 <div class="radio">
 
                                     <!-- Inline radio buttons -->
-                                    <input id="demo-inline-form-radio" class="magic-radio" type="radio" name="inline-form-radio" checked>
-                                    <label for="demo-inline-form-radio">Option 1 (pre-checked)</label>
+                                    <input id="demo-inline-form-radio" class="magic-radio" type="radio" value="1" name="goods_status" checked>
+                                    <label for="demo-inline-form-radio">上架</label>
 
-                                    <input id="demo-inline-form-radio-2" class="magic-radio" type="radio" name="inline-form-radio">
-                                    <label for="demo-inline-form-radio-2">Option 2</label>
-
-                                    <input id="demo-inline-form-radio-3" class="magic-radio" type="radio" name="inline-form-radio">
-                                    <label for="demo-inline-form-radio-3">Option 3</label>
-
-
+                                    <input id="demo-inline-form-radio-2" class="magic-radio" type="radio" value="0" name="goods_status">
+                                    <label for="demo-inline-form-radio-2">下架</label>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group pad-ver">
-                            <label class="col-md-3 control-label">Checkboxes</label>
-                            <div class="col-md-9">
 
-                                <!-- Checkboxes -->
-                                <div class="checkbox">
-                                    <input id="demo-form-checkbox" class="magic-checkbox" type="checkbox" checked>
-                                    <label for="demo-form-checkbox">Option 1 (pre-checked)</label>
-                                </div>
-
-                                <div class="checkbox">
-                                    <input id="demo-form-checkbox-2" class="magic-checkbox" type="checkbox">
-                                    <label for="demo-form-checkbox-2">Option 2</label>
-                                </div>
-
-                                <div class="checkbox">
-                                    <input id="demo-form-checkbox-3" class="magic-checkbox" type="checkbox">
-                                    <label for="demo-form-checkbox-3">Option 3</label>
-                                </div>
-
-
-                            </div>
-                        </div>
-                        <div class="form-group pad-ver">
+                        <!--复选框-->
+                      <!--  <div class="form-group pad-ver">
                             <label class="col-md-3 control-label">Inline Checkboxes</label>
                             <div class="col-md-9">
                                 <div class="checkbox">
 
-                                    <!-- Inline Checkboxes -->
+                                    &lt;!&ndash; Inline Checkboxes &ndash;&gt;
                                     <input id="demo-form-inline-checkbox" class="magic-checkbox" type="checkbox" checked>
                                     <label for="demo-form-inline-checkbox">Option 1 (pre-checked)</label>
 
@@ -164,15 +116,27 @@
 
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
+                        <!--复选框-->
+
                         <div class="form-group">
-                            <label class="col-md-3 control-label">File input</label>
+                            <label class="col-md-3 control-label">商品展示图</label>
                             <div class="col-md-9">
 					                        <span class="pull-left btn btn-primary btn-file">
-					                        Browse... <input type="file">
+					                        Browse... <input type="file" name="goods_pic">
 					                        </span>
                             </div>
                         </div>
+
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">商品详情图</label>
+                            <div class="col-md-9">
+					                        <span class="pull-left btn btn-primary btn-file">
+					                        Browse... <input type="file" name="goods_detail_pic">
+					                        </span>
+                            </div>
+                        </div>
+                        <button class="btn btn-block btn-dark">确认上传商品</button>
                     </form>
                     <!--===================================================-->
                     <!-- END BASIC FORM ELEMENTS -->
