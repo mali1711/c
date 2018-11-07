@@ -7,7 +7,7 @@
  */
 return array(
     'session'                => [
-        'prefix'         => 'admin',
+        'prefix'         => 'index',
         'type'           => '',
         'auto_start'     => true,
     ],

@@ -16,6 +16,7 @@ class Good extends Controller
         return $this->fetch('good/add');
     }
     
+
     /**
      * 商品添加
      * @return false|int
