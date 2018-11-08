@@ -26,11 +26,15 @@ class Category extends Controller{
     }
 
 
+    /**
+     * 根据分类获取商品列表
+     * @return false|static[]
+     */
     public function getgoodlist()
     {
-        $categorys_id = input('?get.categorys_id');
+        $categorys_id = input('get.categorys_id');
         $goods = new Goods();
-        $list = $goods->where('categorys_id',$categorys_id)->all();
-        return $list;
+        $list = $goods->all(['categorys_id'=>$categorys_id]);
+        return json($list);
     }
 }

@@ -36,3 +36,4 @@ Route::controller('good','index/Good');//商品模块
 Route::controller('category','index/Category');//商品模块
 Route::controller('shopcart','index/Shopcart');//购物车
 Route::controller('login','index/Login');//登录
+Route::controller('address','index/Address');//登录

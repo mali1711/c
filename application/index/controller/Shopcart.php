@@ -39,9 +39,9 @@ class Shopcart extends Controller{
      */
     public function getplus()
     {
-//        $users_info = Session::get('users.login');
+        $users_info = Session::get('users.login');
         $data = array(
-            'users_id'=> 1,
+            'users_id'=> $users_info->users_id,
             'goods_id'=> input('get.goods_id'),
             'shopCarts_addtime'=> date('Y-m-d H:i:s'),
         );

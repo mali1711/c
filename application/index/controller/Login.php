@@ -11,12 +11,8 @@ class Login extends Controller{
     public function postdologin()
     {
 
-//        $where['users_pass'] = md5(md5(input('post.users_pass')));
-//        $where['users_iphone'] = input('post.users_iphone');
-
-        $where['users_pass'] = md5(md5('123456'));
-        $where['users_iphone'] = '18396861513';
-        dump($where);
+        $where['users_pass'] = md5(md5(input('post.users_pass')));
+        $where['users_iphone'] = input('post.users_iphone');
         $users = new Users();
         $list = $users->where($where)->find();
         if($list){
