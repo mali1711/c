@@ -66,3 +66,4 @@ class Category extends Controller
         return $this->fetch('acategory/show');
     }
 }
+
